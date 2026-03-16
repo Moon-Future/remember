@@ -19,9 +19,10 @@ export interface User {
 export interface UserSettings {
   id: string;
   userId: string;
-  qingmingReminderEnabled: boolean;
-  deathdayReminderEnabled: boolean;
-  timezone: string;
+  qingmingReminder: boolean;
+  deathdayReminder: boolean;
+  reminderTime?: string;
+  timezone?: string;
   createdAt: string;
   updatedAt: string;
 }

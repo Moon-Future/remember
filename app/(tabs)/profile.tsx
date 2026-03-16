@@ -33,20 +33,26 @@ export default function ProfileScreen() {
   const menuItems: MenuItem[] = [
     {
       icon: 'notifications-outline',
+      title: '提醒列表',
+      onPress: () => router.push('/reminder/index'),
+      showArrow: true,
+    },
+    {
+      icon: 'time-outline',
       title: '提醒设置',
-      onPress: () => {},
+      onPress: () => router.push('/reminder/settings'),
       showArrow: true,
     },
     {
       icon: 'settings-outline',
       title: '数据管理',
-      onPress: () => {},
+      onPress: () => router.push('/settings/data'),
       showArrow: true,
     },
     {
       icon: 'information-circle-outline',
       title: '关于我们',
-      onPress: () => {},
+      onPress: () => router.push('/settings/about'),
       showArrow: true,
     },
   ];

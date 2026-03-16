@@ -31,3 +31,13 @@ export function getDateRangeDescription(date: string): string {
 
   return formatDate(date);
 }
+
+export function isDateInPast(date: string | Date): boolean {
+  return dayjs(date).isBefore(dayjs(), 'day');
+}
+
+export function getDaysUntil(date: string | Date): number | null {
+  const now = dayjs().startOf('day');
+  const target = dayjs(date).startOf('day');
+  return target.diff(now, 'day');
+}

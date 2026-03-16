@@ -1,4 +1,4 @@
-export type ReminderType = 'deathday' | 'qingming';
+export type ReminderType = 'deathday' | 'qingming' | 'custom';
 
 export interface Reminder {
   id: string;
@@ -6,11 +6,12 @@ export interface Reminder {
   familyMemberId?: string;
   type: ReminderType;
   title: string;
-  remindMonth: number;
-  remindDay: number;
-  isLunar: boolean;
-  daysBefore: number;
+  remindMonth?: number;
+  remindDay?: number;
+  isLunar?: boolean;
+  daysBefore?: number;
   isEnabled: boolean;
+  reminderDate: string;
   lastNotifiedAt?: string;
   createdAt: string;
   updatedAt: string;
@@ -18,6 +19,11 @@ export interface Reminder {
   memberPhoto?: string;
   nextDate?: string;
   daysUntil?: number;
+  familyMember?: {
+    id: string;
+    name: string;
+    photoUrl?: string;
+  };
 }
 
 export interface CreateReminderRequest {
